@@ -3,8 +3,8 @@ function [me]=time_feaext(y_in)
 % y_in 输入信号
 % ma,mi,me,Kr,ku,pk
 yg=y_in;
-for i=16:92:844;
-    k=16:92:844;
+for i=81:92:909;
+    k=81:92:909;
     j=i:1:i+92;
     ma(i) = max(yg(j)); %最大值
     mi(i)= min(yg(j)); %最小值

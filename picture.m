@@ -1,12 +1,16 @@
 %% 作图 figure1
 figure
-plot(y,'b','linewidth',1.2)
+plot(y,'g','linewidth',1.2)
 hold on
-plot(y2,'r','linewidth',0.5)
-% hold on
-% plot(y2,'k','linewidth',0.5)
-% axis([0 1024 9.382 9.45])
-legend('un-aged','1.5x ESR    90%x C','2.0x ESR    80%x C');
+plot(y1,'b','linewidth',0.5)
+hold on
+plot(y2,'m','linewidth',0.5)
+hold on
+plot(y3,'r','linewidth',0.5)
+hold on
+plot(y4,'k','linewidth',0.5)
+axis([0 1024 9.35 9.47])
+legend('un-aged','1.2x ESR    95%x C','1.5x ESR    90%x C','1.8x ESR    85%x C','2.0x ESR    80%x C');
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure2
@@ -18,21 +22,21 @@ legend('original value of capacitor',' reconsitution value of capacitor')
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
-plot(pcaout,'-b','linewidth',1.0)
+plot(pcaout,'-g','linewidth',1.0)
 hold on
-plot(pcaout1,'-r','linewidth',1.0)
+plot(pcaout1,'-b','linewidth',0.8)
 hold on
-plot(pcaout2,'-m','linewidth',1.0)
-% hold on
-% plot(pcaout4,'-*r','linewidth',0.8)
-% hold on
-% plot(pcaout2,'-m','linewidth',1.0)
+plot(pcaout2,'-m','linewidth',0.8)
+hold on
+plot(pcaout3,'-r','linewidth',0.8)
+hold on
+plot(pcaout4,'-k','linewidth',0.8)
 
 % yticks(-15:2:5);
-legend('un-aged','1.5x ESR 90%x C','2.0x ESR 80%x C');
+legend('un-aged','1.2x ESR    95%x C','1.5x ESR    90%x C','1.8x ESR    85%x C','2.0x ESR    80%x C');
 ylabel('characteristic value')
 xlabel('Number of Cycles')
-axis([1 10 9.395 9.435])
+% axis([1 10 -7 4.0])
 % title('一个半周期')
 %% 
 kw=y(1:92);
@@ -50,10 +54,10 @@ ylabel('Amplitude')
 % hold on
 % plot(sft,'r','linewidth',0.5);
 %% 稀疏度K值与欧氏距离
-k=[2:2:169 ];
-plot(k,cspca,'r','linewidth',1.5);
+K=[2:2:169 ];
+plot(K,cspca,'r','linewidth',1.5);
 hold on
-plot(k,pca,'b','linewidth',1.5);
+plot(K,pca,'b','linewidth',1.5);
 xlabel('K')
 ylabel('Dist')
 legend('CS-PCA','PCA')
