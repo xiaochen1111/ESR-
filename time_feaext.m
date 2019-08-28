@@ -1,4 +1,4 @@
-function [me]=time_feaext(y_in)
+function [me,ma,mi,st,fc,pk ,rmse ,fgfz ,sf ,cf ,If ,Clf ,Kv]=time_feaext(y_in)
 % 时域特征提取：包含最大值、最小值、平均值、峭度因子、峭度、峰峰值。
 % y_in 输入信号
 % ma,mi,me,Kr,ku,pk
@@ -6,19 +6,38 @@ yg=y_in;
 for i=81:92:909;
     k=81:92:909;
     j=i:1:i+92;
-    ma(i) = max(yg(j)); %最大值
-    mi(i)= min(yg(j)); %最小值
-    me(i)= mean(yg(j)); %平均值
-    Kr(i) = sum(yg(j).^4)/sqrt(sum(yg(j).^2)) ;%峭度因子
-    ku(i) = kurtosis(yg(j)); %峭度
-    pk(i)= ma(i)-mi(i); %峰-峰值
+    me(i)= mean(yg(j));         %平均值
+    ma(i) = max(yg(j));         %最大值
+    mi(i)= min(yg(j));          %最小值
+    st(i)=std(yg(j));           %标准差
+    fc(i)=st(i).^2;             %方差
+    pk(i)= ma(i)-mi(i);         %峰-峰值
+    rmse(i)=rms(yg(i));         % 均方根值
+    mes(i)=mean(abs(yg(j)));    %绝对平均值
+    fgfz(i)=(sum(sqrt(abs(yg(j))))./92).^2; %方根幅值
+    ku(i) = kurtosis(yg(j));    %峭度
+    
+    
+    sf(i)=rmse(i)./mes(i);      %波形指标
+    cf(i)=ma(i)./rmse(i);       %峰值指标
+    If(i)=ma(i)./mes(i);        %脉冲指标
+    Clf(i)=ma(i)./ fgfz(i);     %裕度指标
+    Kv(i)=ku(i)./(rmse(i).^4);  %峭度指标
+%     Kr(i) = sum(yg(j).^4)/sqrt(sum(yg(j).^2)) ;%峭度因子
 end  
 ma=ma(k);
 mi=mi(k);
 me=me(k);
-Kr=Kr(k);
+st=st(k); 
+fc=fc(k);
 pk=pk(k);
-ku=ku(k);
+rmse=rmse(k);
+fgfz=fgfz(k);
+sf=sf(k);
+cf=cf(k);
+If=If(k);
+Clf=Clf(k);
+Kv=Kv(k);
 % %% 归1化
 % mab=max(ma);
 % mas=min(ma);
