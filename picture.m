@@ -9,15 +9,15 @@ hold on
 plot(y3,'r','linewidth',0.5)
 hold on
 plot(y4,'k','linewidth',0.5)
-axis([0 1024 9.35 9.47])
-legend('un-aged','1.2x ESR    95%x C','1.5x ESR    90%x C','1.8x ESR    85%x C','2.0x ESR    80%x C');
+axis([0 1024 9.391 9.435])
+% legend('un-aged','1.2x ESR    95%x C','1.5x ESR    90%x C','1.8x ESR    85%x C','2.0x ESR    80%x C');
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure2
 plot(y,'b','linewidth',1.0)
 hold on
 plot(sig,'r','linewidth',0.5)
- axis([0 1024 9.39 9.44])
+ axis([0 1024 9.37 9.44])
 legend('original value of capacitor',' reconsitution value of capacitor')
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
@@ -55,9 +55,13 @@ ylabel('Amplitude')
 % plot(sft,'r','linewidth',0.5);
 %% œ° Ë∂»K÷µ”Î≈∑ œæ‡¿Î
 K=[2:2:169 ];
-plot(K,cspca,'r','linewidth',1.5);
+plot(K,pca,'r','linewidth',1.5);
 hold on
-plot(K,pca,'b','linewidth',1.5);
+plot(K,pca1,'b','linewidth',1.5);
+hold on
+plot(K,pca2,'k','linewidth',1.5);
+hold on
+plot(K,pca3,'g','linewidth',1.5);
 xlabel('K')
 ylabel('Dist')
 legend('CS-PCA','PCA')

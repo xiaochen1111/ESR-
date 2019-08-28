@@ -69,7 +69,7 @@ switch method
     otherwise
         error('Undefined method!')
 end
-fprintf('Top %d components are retained; cumulative eigenvalue contribution is %1.2f/n', N, sum(D(1:N))/sum(D))
+% fprintf('Top %d components are retained; cumulative eigenvalue contribution is %1.2f/n', N, sum(D(1:N))/sum(D))
 
 switch nargout
     case {0,1}
