@@ -1,10 +1,11 @@
 %% Compressed Sensing Method for IGBT High-Speed Switching Time On-Line Monitoring
-function sig3=compressed(s,no,r,K)
+function sig3=compressed(s,r,K)
 %% 输入输出函数
 % s 原始信号
 % n 噪声
 % r 压缩率
-f=awgn(s,no,'measured',9);
+% f=awgn(s,no,'measured',9);
+f=s;
 n=length(f);                   
 m = double(int32(r*n)); 
 %                    构造测量矩阵感知矩阵
