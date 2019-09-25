@@ -1,4 +1,5 @@
 %% 作图 figure1
+x=0:1:499;
 figure
 plot(y,'g','linewidth',1.2)
 hold on
@@ -9,14 +10,17 @@ hold on
 plot(y3,'r','linewidth',0.5)
 hold on
 plot(y4,'k','linewidth',0.5)
-axis([0 1024 9.353 9.47])
-legend('state 1','state 2','state 3','state 4','state 5');
+% axis([0 499 10.456 10.9])
+legend('state 1','state 2','state 3');
 ylabel('Ripple voltage(V)')
-xlabel('Sample number')
+xlabel('Time(us)')
 set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
+set(gca,'xtick',[0,50,50*2,50*3,50*4,50*5,50*6,50*7,50*8,50*9,50*10]);
+set(gca,'xticklabel',{'0','25','50','75','100','125','150','175','200','225','250'});
+
 %% figure2
 plot(y,'b','linewidth',1.0)
 hold on
@@ -26,24 +30,36 @@ legend('original value of capacitor',' reconsitution value of capacitor')
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
-plot(pcaout,'-g','linewidth',1.2)
+x=1:1:10;
+stairs(x,pcaout,'-g','linewidth',1.2)
 hold on
-plot(pcaout1,'-b','linewidth',0.8)
+stairs(x,pcaout1,'-b','linewidth',0.8)
 hold on
-plot(pcaout2,'-m','linewidth',0.8)
+stairs(x,pcaout2,'-m','linewidth',0.8)
 hold on
-plot(pcaout3,'-r','linewidth',0.8)
+stairs(x,pcaout3,'-r','linewidth',0.8)
 hold on
-plot(pcaout4,'-k','linewidth',0.8)
+stairs(x,pcaout4,'-k','linewidth',0.8)
 
 legend('state 1','state 2','state 3','state 4','state 5');
-ylabel('Ripple voltage(V)')
+ylabel('Characteristic Value')%Ripple voltage(V)
 xlabel('Time Window')
 set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
-% axis([1 10 18 34])
+% axes('position', [0.39 0.18, 0.50, 0.26])
+% staris(pcaout,'-g','linewidth',1.2)
+% hold on
+% staris(pcaout1,'-b','linewidth',0.8)
+% hold on
+% staris(pcaout2,'-m','linewidth',0.8)
+% hold on
+% staris(pcaout3,'-r','linewidth',0.8)
+% hold on
+% staris(pcaout4,'-k','linewidth',0.8)
+% xlim([1 10 8.063 8.077])
+% axis([1 10 -10 13])
 % title('一个半周期')
 %% 
 kw=y(1:92);

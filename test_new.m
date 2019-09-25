@@ -26,27 +26,28 @@ pca2=[];
 pca3=[];
 %%
 % for r=0.2:0.1:0.8
+yw=awgn(y, w,'measured', 10);
+yw1=awgn(y1,w,'measured', 10);
+yw2=awgn(y2,w,'measured',10);
+yw3=awgn(y3,w,'measured',10);
+yw4=awgn(y4,w,'measured',10);
 % for K=2:2:169 
-K=40;                    %108;
-sig=compressed(y,w,r,K);
-sig1=compressed(y1,w,r,K);
-sig2=compressed(y2,w,r,K);
-sig3=compressed(y3,w,r,K);
-sig4=compressed(y4,w,r,K);
+K=124;                    %124;
+% yw5=y5+w;
+sig=compressed(yw,r,K);
+sig1=compressed(yw1,r,K);
+sig2=compressed(yw2,r,K);
+sig3=compressed(yw3,r,K);
+sig4=compressed(yw4,r,K);
 % sig5=compressed(y5,w,r,K);
 %% 特征提取
-yw=awgn(y, w,'measured', 9);
-yw1=awgn(y1,w,'measured', 9);
-yw2=awgn(y2,w,'measured',9);
-yw3=awgn(y3,w,'measured', 9);
-yw4=awgn(y4,w,'measured',9);
-% yw5=y5+w;
+
 % PCA
-[pcaout]=feaext(yw);
-[pcaout1]=feaext(yw1);
-[pcaout2]=feaext(yw2);
-[pcaout3]=feaext(yw3);
-[pcaout4]=feaext(yw4);
+[pcaout]=time_feaext(yw);
+[pcaout1]=time_feaext(yw1);
+[pcaout2]=time_feaext(yw2);
+[pcaout3]=time_feaext(yw3);
+[pcaout4]=time_feaext(yw4);
 % [pcaout4]=feaext(yw1);
 % [pcaout5]=feaext(yw2);
 %% 评价指标
