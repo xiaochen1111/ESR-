@@ -3,21 +3,24 @@ clear all
 %加载原始数据
 load('boost1.mat');
 
-%boost1
+% boost1
 i=451000:452023;
 j=450963:451986;
 k=450979:452002;
 m=450969:451992;
 n=451020:452043;
+% %buck
+% i=180000:181023;
+% j=179983:181006;
 
 y=boost1(i,1);
 y1=boost1(j,2);
 y2=boost1(k,3);
 y3=boost1(m,4);
-y4=boost1(n,5);
+y4=boost1(j,2);
 pca=[];
 cspca=[];
-% for w=30:5:65
+
 w=45;               %信噪比
 r=0.5;
 pca=[];
@@ -26,13 +29,14 @@ pca2=[];
 pca3=[];
 %%
 % for r=0.2:0.1:0.8
-yw=awgn(y, w,'measured', 10);
-yw1=awgn(y1,w,'measured', 10);
-yw2=awgn(y2,w,'measured',10);
-yw3=awgn(y3,w,'measured',10);
-yw4=awgn(y4,w,'measured',10);
+% for w=30:5:65
+yw=awgn(y, w,'measured', 9);
+yw1=awgn(y1,w,'measured',9);
+yw2=awgn(y2,w,'measured',11);
+yw3=awgn(y3,w,'measured',11);
+yw4=awgn(y4,w,'measured',13);
 % for K=2:2:169 
-K=124;                    %124;
+K=156;                    %124;
 % yw5=y5+w;
 sig=compressed(yw,r,K);
 sig1=compressed(yw1,r,K);
@@ -43,11 +47,11 @@ sig4=compressed(yw4,r,K);
 %% 特征提取
 
 % PCA
-[pcaout]=time_feaext(yw);
-[pcaout1]=time_feaext(yw1);
-[pcaout2]=time_feaext(yw2);
-[pcaout3]=time_feaext(yw3);
-[pcaout4]=time_feaext(yw4);
+[pcaout]=time_feaext(sig);
+[pcaout1]=time_feaext(sig1);
+[pcaout2]=time_feaext(sig2);
+[pcaout3]=time_feaext(sig3);
+[pcaout4]=time_feaext(sig4);
 % [pcaout4]=feaext(yw1);
 % [pcaout5]=feaext(yw2);
 %% 评价指标
@@ -59,6 +63,11 @@ pca=[pca,D(2,:)];
 pca1=[pca1,D1(2,:)];
 pca2=[pca2,D2(2,:)];
 pca3=[pca3,D3(2,:)];
+S=var(pcaout);
+S1=var(pcaout1);
+S2=var(pcaout2);
+S3=var(pcaout3);
+S4=var(pcaout4);
 % end
 %%
 % sigpower=sum(abs(y).^2)/length(y);

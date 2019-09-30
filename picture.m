@@ -1,7 +1,7 @@
 %% 作图 figure1
 x=0:1:499;
 figure
-plot(y,'g','linewidth',1.2)
+plot(y,'g','linewidth',1.8)
 hold on
 plot(y1,'b','linewidth',0.5)
 hold on
@@ -9,7 +9,7 @@ plot(y2,'m','linewidth',0.5)
 hold on
 plot(y3,'r','linewidth',0.5)
 hold on
-plot(y4,'k','linewidth',0.5)
+plot(y4,'k','linewidth',1.5)
 % axis([0 499 10.456 10.9])
 legend('state 1','state 2','state 3');
 ylabel('Ripple voltage(V)')
@@ -31,7 +31,7 @@ ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
 x=1:1:10;
-stairs(x,pcaout,'-g','linewidth',1.2)
+stairs(x,pcaout,'-g','linewidth',1.8)
 hold on
 stairs(x,pcaout1,'-b','linewidth',0.8)
 hold on
@@ -39,7 +39,7 @@ stairs(x,pcaout2,'-m','linewidth',0.8)
 hold on
 stairs(x,pcaout3,'-r','linewidth',0.8)
 hold on
-stairs(x,pcaout4,'-k','linewidth',0.8)
+stairs(x,pcaout4,'-k','linewidth',1.5)
 
 legend('state 1','state 2','state 3','state 4','state 5');
 ylabel('Characteristic Value')%Ripple voltage(V)
@@ -48,6 +48,7 @@ set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
+grid on
 % axes('position', [0.39 0.18, 0.50, 0.26])
 % staris(pcaout,'-g','linewidth',1.2)
 % hold on
@@ -59,7 +60,7 @@ set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
 % hold on
 % staris(pcaout4,'-k','linewidth',0.8)
 % xlim([1 10 8.063 8.077])
-% axis([1 10 -10 13])
+% axis([1 10 -10 15.5])
 % title('一个半周期')
 %% 
 kw=y(1:92);
