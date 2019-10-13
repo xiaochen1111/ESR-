@@ -28,7 +28,7 @@ pca1=[];
 pca2=[];
 pca3=[];
 %%
-% for r=0.2:0.1:0.8
+for r=0.2:0.1:0.8
 % for w=30:5:65
 yw=awgn(y, w,'measured', 9);
 yw1=awgn(y1,w,'measured',9);
@@ -47,11 +47,11 @@ sig4=compressed(yw4,r,K);
 %% 特征提取
 
 % PCA
-[pcaout]=time_feaext(sig);
-[pcaout1]=time_feaext(sig1);
-[pcaout2]=time_feaext(sig2);
-[pcaout3]=time_feaext(sig3);
-[pcaout4]=time_feaext(sig4);
+[pcaout]=feaext(sig);
+[pcaout1]=feaext(sig1);
+[pcaout2]=feaext(sig2);
+[pcaout3]=feaext(sig3);
+[pcaout4]=feaext(sig4);
 % [pcaout4]=feaext(yw1);
 % [pcaout5]=feaext(yw2);
 %% 评价指标
@@ -59,15 +59,14 @@ D=evalution(pcaout,pcaout1);
 D1=evalution(pcaout,pcaout2);
 D2=evalution(pcaout,pcaout3);
 D3=evalution(pcaout,pcaout4);
-pca=[pca,D(2,:)];
-pca1=[pca1,D1(2,:)];
-pca2=[pca2,D2(2,:)];
-pca3=[pca3,D3(2,:)];
-S=var(pcaout);
-S1=var(pcaout1);
-S2=var(pcaout2);
-S3=var(pcaout3);
-S4=var(pcaout4);
+% pca=[pca,D(2,:)];
+% pca1=[pca1,D1(2,:)];
+% pca2=[pca2,D2(2,:)];
+% pca3=[pca3,D3(2,:)];
+d1=mean(pcaout4)-mean(pcaout3);
+d2=mean(pcaout4)-mean(pcaout3);
+dd=[d1,d2];
+smooth1=sqrt(sum(diff(pcaout4).^2)./(9*(min(dd).^2)));
 % end
 %%
 % sigpower=sum(abs(y).^2)/length(y);
