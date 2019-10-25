@@ -9,16 +9,12 @@ j=450963:451986;
 k=450979:452002;
 m=450969:451992;
 n=451020:452043;
-% %buck
-% i=180000:181023;
-% j=179983:181006;
 
-y=boost1(i,1);
+y =boost1(i,1);
 y1=boost1(j,2);
 y2=boost1(k,3);
 y3=boost1(m,4);
-y4=boost1(j,2);
-pca=[];
+y4=boost1(n,5);
 cspca=[];
 
 w=45;               %–≈‘Î±»
@@ -27,16 +23,17 @@ pca=[];
 pca1=[];
 pca2=[];
 pca3=[];
+smooth=[];
 %%
-for r=0.2:0.1:0.8
+% for r=0.3:0.1:0.8
 % for w=30:5:65
 yw=awgn(y, w,'measured', 9);
 yw1=awgn(y1,w,'measured',9);
 yw2=awgn(y2,w,'measured',11);
 yw3=awgn(y3,w,'measured',11);
 yw4=awgn(y4,w,'measured',13);
-% for K=2:2:169 
-K=156;                    %124;
+% for K=2:2:200
+K=70;                    %70;124
 % yw5=y5+w;
 sig=compressed(yw,r,K);
 sig1=compressed(yw1,r,K);
@@ -59,14 +56,15 @@ D=evalution(pcaout,pcaout1);
 D1=evalution(pcaout,pcaout2);
 D2=evalution(pcaout,pcaout3);
 D3=evalution(pcaout,pcaout4);
-% pca=[pca,D(2,:)];
-% pca1=[pca1,D1(2,:)];
-% pca2=[pca2,D2(2,:)];
-% pca3=[pca3,D3(2,:)];
-d1=mean(pcaout4)-mean(pcaout3);
-d2=mean(pcaout4)-mean(pcaout3);
+pca=[pca,D(2,:)];
+pca1=[pca1,D1(2,:)];
+pca2=[pca2,D2(2,:)];
+pca3=[pca3,D3(2,:)];
+d1=mean(pcaout4)-mean(pcaout);
+d2=mean(pcaout4)-mean(pcaout);
 dd=[d1,d2];
 smooth1=sqrt(sum(diff(pcaout4).^2)./(9*(min(dd).^2)));
+smooth=[smooth,smooth1];
 % end
 %%
 % sigpower=sum(abs(y).^2)/length(y);

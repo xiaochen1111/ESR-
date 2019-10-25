@@ -48,7 +48,7 @@ set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
-grid on
+
 % axes('position', [0.39 0.18, 0.50, 0.26])
 % staris(pcaout,'-g','linewidth',1.2)
 % hold on
@@ -60,7 +60,7 @@ grid on
 % hold on
 % staris(pcaout4,'-k','linewidth',0.8)
 % xlim([1 10 8.063 8.077])
-% axis([1 10 -10 15.5])
+% axis([1 10 -3 8])
 % title('一个半周期')
 %% 
 kw=y(1:92);
@@ -78,7 +78,7 @@ ylabel('Amplitude')
 % hold on
 % plot(sft,'r','linewidth',0.5);
 %% 稀疏度K值与欧氏距离
-K=[2:2:169 ];
+K=[2:2:200];
 plot(K,pca,'r','linewidth',1.5);
 hold on
 plot(K,pca1,'b','linewidth',1.5);
