@@ -78,7 +78,7 @@ ylabel('Amplitude')
 % hold on
 % plot(sft,'r','linewidth',0.5);
 %% œ° Ë∂»K÷µ”Î≈∑ œæ‡¿Î
-K=[2:2:200];
+K=[2:2:169];
 plot(K,pca,'r','linewidth',1.5);
 hold on
 plot(K,pca1,'b','linewidth',1.5);
