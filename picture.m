@@ -6,10 +6,10 @@ hold on
 plot(y1,'b','linewidth',0.5)
 hold on
 plot(y2,'m','linewidth',0.5)
-hold on
-plot(y3,'r','linewidth',0.5)
-hold on
-plot(y4,'k','linewidth',1.5)
+% hold on
+% plot(y3,'r','linewidth',0.5)
+% hold on
+% plot(y4,'k','linewidth',1.5)
 % axis([0 499 10.456 10.9])
 legend('state 1','state 2','state 3');
 ylabel('Ripple voltage(V)')
@@ -30,37 +30,43 @@ legend('original value of capacitor',' reconsitution value of capacitor')
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
-x=1:1:10;
-stairs(x,pcaout,'-g','linewidth',1.8)
+clc
+t=1:1:9;
+stairs(t,pcaout,'-g','linewidth',1.8)
 hold on
-stairs(x,pcaout1,'-b','linewidth',0.8)
+stairs(t,pcaout1,'-b','linewidth',0.8)
 hold on
-stairs(x,pcaout2,'-m','linewidth',0.8)
-hold on
-stairs(x,pcaout3,'-r','linewidth',0.8)
-hold on
-stairs(x,pcaout4,'-k','linewidth',1.5)
+stairs(t,pcaout2,'-m','linewidth',0.8)
+% hold on
+% stairs(t,pcaout3,'-r','linewidth',0.8)
+% hold on
+% stairs(t,pcaout4,'-k','linewidth',1.5)
 
-legend('state 1','state 2','state 3','state 4','state 5');
+legend('state 1','state 2','state 3');
 ylabel('Characteristic Value')%Ripple voltage(V)
 xlabel('Time Window')
 set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
-
-% axes('position', [0.39 0.18, 0.50, 0.26])
-% staris(pcaout,'-g','linewidth',1.2)
+% axis([1 10 9.370 9.415])
+% 
+% x=1:0.01:9.99;
+% yy=pcaout(1)*(x>=1&x<2)+pcaout(2)*(x>=2&x<3)+pcaout(3)*(x>=3&x<4)+pcaout(4)*(x>=4&x<5)+pcaout(5)*(x>=5&x<6)+pcaout(6)*(x>=6&x<7)+pcaout(7)*(x>=7&x<8)+pcaout(8)*(x>=8&x<9)+pcaout(9)*(x>=9&x<10);
+% yy3=pcaout1(1)*(x>=1&x<2)+pcaout1(2)*(x>=2&x<3)+pcaout1(3)*(x>=3&x<4)+pcaout1(4)*(x>=4&x<5)+pcaout1(5)*(x>=5&x<6)+pcaout1(6)*(x>=6&x<7)+pcaout1(7)*(x>=7&x<8)+pcaout1(8)*(x>=8&x<9)+pcaout1(9)*(x>=9&x<10);
+% axes('position', [0.18 0.18, 0.4, 0.26])
+% plot(x,yy,'-g','linewidth',1.2)
 % hold on
-% staris(pcaout1,'-b','linewidth',0.8)
+% plot(x,yy3,'-b','linewidth',1.0)
+% axis([6 9 9.370 9.415])
 % hold on
-% staris(pcaout2,'-m','linewidth',0.8)
+% staris(x,pcaout2,'-m','linewidth',1.2)
 % hold on
-% staris(pcaout3,'-r','linewidth',0.8)
+% staris(x,pcaout3,'-r','linewidth',0.8)
 % hold on
-% staris(pcaout4,'-k','linewidth',0.8)
+% staris(x,pcaout4,'-k','linewidth',0.8)
 % xlim([1 10 8.063 8.077])
-% axis([1 10 -3 8])
+
 % title('一个半周期')
 %% 
 kw=y(1:92);
@@ -82,10 +88,10 @@ K=[2:2:169];
 plot(K,pca,'r','linewidth',1.5);
 hold on
 plot(K,pca1,'b','linewidth',1.5);
-hold on
-plot(K,pca2,'k','linewidth',1.5);
-hold on
-plot(K,pca3,'g','linewidth',1.5);
+% hold on
+% plot(K,pca2,'k','linewidth',1.5);
+% hold on
+% plot(K,pca3,'g','linewidth',1.5);
 xlabel('K')
 ylabel('Dist')
 legend('CS-PCA','PCA')
