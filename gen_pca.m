@@ -1,4 +1,4 @@
-function varargout = gen_pca(X, N, method)
+function varargout = gen_pca(X,method)
 %PCA PRINCIPLE COMPONENTS ANALYSIS
 % X是n1*n2的，n1是变量个数，n2是样本数
 % 返回值p是转换坐标系 N说明投影到N个坐标系上
@@ -26,10 +26,9 @@ function varargout = gen_pca(X, N, method)
 %
 % Siqing Wu, <6sw21@queensu.ca >
 % Version: 1.1, Date: 2008-07-30
-
 error(nargchk(1,3,nargin)) % check the number of arguments
 error(nargoutchk(0,3,nargout))
-
+for N=1:1:10;
 [nr, nc] = size(X);
 
 if nargin<3
@@ -69,8 +68,11 @@ switch method
     otherwise
         error('Undefined method!')
 end
-fprintf('Top %d components are retained; cumulative eigenvalue contribution is %1.2f/n', N, sum(D(1:N))/sum(D))
-
+if sum(D(1:N))/sum(D)>0.95
+    break
+end
+end
+% P=sum(P);
 switch nargout
     case {0,1}
         varargout = {P};
@@ -80,3 +82,4 @@ switch nargout
         Y = P*X;
         varargout = {P, D, Y};
 end
+fprintf('Top %d components are retained; cumulative eigenvalue contribution is %1.2f/n', N, sum(D(1:N))/sum(D))

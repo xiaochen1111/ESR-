@@ -1,12 +1,11 @@
-function [pcaout]=feaext(yin)
+function [pcaout,p]=feaext(yin,p)
 y=yin;
+% y=abs(fft(yin,1024));
 % PCA
-% k=3:1:902;
-k=1:1:1000;
+k=1:1:920;
 pcain=y(k);
-x=reshape(pcain,100,10);   % 将10组值写为矩阵，每一列代表一个周期
-N=1;
-p=gen_pca(x, N, 'svd');
+x=reshape(pcain,92,10);   % 将10组值写为矩阵，每一列代表一个周期
+p=gen_pca(x, 'svd');
 pcaout=p*x;
 % %% 滑动平滑滤波
 % L = length(pcaout);

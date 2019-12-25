@@ -1,0 +1,173 @@
+(ExpressProject "test"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\test.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\test-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\test-pspicefiles\schematic1\test.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\test-pspicefiles\schematic1\test.sim"
+        (DisplayName "SCHEMATIC1-test")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File
+         "C:\Cadence\Cadence_SPB_16.6-2015\tools\pspice\library\STGW40H65DFB-V2.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName
+           "C:\Cadence\Cadence_SPB_16.6-2015\tools\pspice\library\STGW40H65DFB-V2.lib")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (D1N4002
+      (FullPartName "D1N4002.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (BSM200GA120D
+      (FullPartName "BSM200GA120D.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\IGBT.OLB")
+      (DeviceIndex "0"))
+    (IRGBC20M
+      (FullPartName "IRGBC20M.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\IGBT.OLB")
+      (DeviceIndex "0"))
+    (IRF9130
+      (FullPartName "IRF9130.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\PWRMOS.OLB")
+      (DeviceIndex "0"))
+    (IRF520
+      (FullPartName "IRF520.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\PWRMOS.OLB")
+      (DeviceIndex "0"))
+    (1N4500
+      (FullPartName "1N4500.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (IRG4BC20S
+      (FullPartName "IRG4BC20S.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\IGBT.OLB")
+      (DeviceIndex "0"))
+    (STGW40H65DFB-V3
+      (FullPartName "STGW40H65DFB-V3.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\STGW40H65DFB-V3.OLB")
+      (DeviceIndex "0"))
+    (STGW40H65DFB-V2
+      (FullPartName "STGW40H65DFB-V2.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\STGW40H65DFB-V2.OLB")
+      (DeviceIndex "0"))
+    (D1N3494
+      (FullPartName "D1N3494.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (BSM100GB100D
+      (FullPartName "BSM100GB100D.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\IGBT.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (BSM50GB100D
+      (FullPartName "BSM50GB100D.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\IGBT.OLB")
+      (DeviceIndex "0"))
+    (1N6650
+      (FullPartName "1N6650.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (IGT4E10
+      (FullPartName "IGT4E10.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\AA_IGBT.OLB")
+      (DeviceIndex "0"))
+    (ZbreakN
+      (FullPartName "ZbreakN.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (120NQ045
+      (FullPartName "120NQ045.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (ZC832A/ZTX
+      (FullPartName "ZC832A/ZTX.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\ZETEX.OLB")
+      (DeviceIndex "0"))
+    (VPWL_GENERIC
+      (FullPartName "VPWL_GENERIC.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (Sbreak
+      (FullPartName "Sbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_16.6-2015\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "C:\Users\29721\Desktop\prectice\test.dsn")
+      (Path "Design Resources" "C:\Users\29721\Desktop\prectice\test.dsn"
+         "SCHEMATIC1")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources" "C:\Users\29721\Desktop\prectice\test.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 413"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 130 1686 130 586")
+        (Scroll "-58 55")
+        (Zoom "105")
+        (Occurrence "/"))
+      (Path "C:\USERS\29721\DESKTOP\PRECTICE\TEST.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (MPSSessionName "29721")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\Cadence_SPB_16.6-2015\tools\capture\library\pspice"))

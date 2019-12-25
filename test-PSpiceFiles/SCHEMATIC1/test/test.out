@@ -1,0 +1,209 @@
+
+**** 12/19/19 16:39:32 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ C:\Users\29721\Desktop\prectice\test-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "C:/Cadence/Cadence_SPB_16.6-2015/tools/pspice/library/STGW40H65DFB-V2.lib" 
+* From [PSPICE NETLIST] section of C:\Cadence\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+.lib "C:\Cadence\Cadence_SPB_16.6-2015\tools\capture\library\pspice\STGW40H65DFB-V2.OLB" 
+
+*Analysis directives: 
+.TRAN  0 0.08 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST
+V_V1         N09437 0 100
+V_V27         N44418 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out1.txt" 
+V_V29         N10783 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out3.txt" 
+V_V30         N11028 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out4.txt" 
+V_V35         N10288 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\outnew2.txt" 
+R_R1         0 N107304  100 TC=0,0 
+R_R2         0 N110116  100 TC=0,0 
+D_D10         N101997 N09437 D1N4002 
+D_D11         N96748 N09437 D1N4002 
+D_D12         N107304 N101997 D1N4002 
+D_D13         N110116 N96748 D1N4002 
+Z_Z1         N09437 N44418 N101997 IXGH40N60
+Z_Z13         N09437 N10288 N96748 IXGH40N60
+Z_Z14         N101997 N10783 N107304 IXGH40N60
+Z_Z15         N96748 N11028 N110116 IXGH40N60
+
+**** RESUMING test.cir ****
+.END
+
+**** 12/19/19 16:39:32 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ C:\Users\29721\Desktop\prectice\test-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 12/19/19 16:39:32 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ C:\Users\29721\Desktop\prectice\test-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXGH40N60       
+               NIGBT           
+          VT    4.1822       
+          KF     .36047      
+         CGS   31.942000E-09 
+        COXD   53.188000E-09 
+         VTD    2.657        
+         TAU  287.560000E-09 
+          KP   50.034        
+        AREA   37.500000E-06 
+         AGD   18.750000E-06 
+
+
+**** 12/19/19 16:39:32 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ C:\Users\29721\Desktop\prectice\test-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N09437)  100.0000 (N10288)    0.0000 (N10783)   15.0000 (N11028)   15.0000     
+
+(N44418)    0.0000 (N96748)     .1463 (N101997)     .1463                       
+
+(N107304)     .0745                   (N110116)     .0745                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.489E-03
+    V_V27        0.000E+00
+    V_V29        0.000E+00
+    V_V30        0.000E+00
+    V_V35        0.000E+00
+
+    TOTAL POWER DISSIPATION   1.49E-01  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  3.457E-03.
+         Time step =  715.1E-21, minimum allowable step size =  1.000E-18
+
+  These supply currents failed to converge:
+
+    I(V_V1)                   =   -1.506mA  \   -1.489mA
+    I(V_V27)                  =   -5.424uA  \    2.020nA
+    I(V_V29)                  =   -3.129uA  \    9.485nA
+    I(V_V30)                  =   253.32nA  \    -9.84nA
+    I(V_V35)                  =   -4.232uA  \   -2.016nA
+
+  These devices failed to converge:
+    D_D12     D_D13     Z_Z1      Z_Z13     Z_Z14     Z_Z15     
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N09437)  100.0000 (N10288)    0.0000 (N10783)   15.0000 (N11028)   15.0000     
+
+(N44418)    0.0000 (N96748)     .1463 (N101997)     .1463                       
+
+(N107304)     .0745                   (N110116)     .0745                   
+
+
+**** Interrupt ****
+
+The following unused Convergence options can be added to simulation:
+CSHUNT=1e-12
+DIODERS=1e-4
+DIODECJO=2e-12
+BJTCJ=1e-11
+JFETCJ=1e-12
+MOSCJ=1e-12
+AutoConverge
+
+          JOB ABORTED
+
+**** 12/19/19 16:39:32 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ C:\Users\29721\Desktop\prectice\test-pspicefiles\schematic1\test.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =       20.73
+

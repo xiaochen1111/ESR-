@@ -1,0 +1,20 @@
+* source TEST
+V_V1         N09437 0 100
+V_V27         N44418 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out1.txt" 
+V_V29         N10783 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out3.txt" 
+V_V30         N11028 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\out4.txt" 
+V_V35         N10288 0   PWL    
++ FILE "C:\Users\29721\Desktop\prectice\outnew2.txt" 
+R_R1         0 N107304  100 TC=0,0 
+R_R2         0 N110116  100 TC=0,0 
+D_D10         N101997 N09437 D1N4002 
+D_D11         N96748 N09437 D1N4002 
+D_D12         N107304 N101997 D1N4002 
+D_D13         N110116 N96748 D1N4002 
+Z_Z1         N09437 N44418 N101997 IXGH40N60
+Z_Z13         N09437 N10288 N96748 IXGH40N60
+Z_Z14         N101997 N10783 N107304 IXGH40N60
+Z_Z15         N96748 N11028 N110116 IXGH40N60

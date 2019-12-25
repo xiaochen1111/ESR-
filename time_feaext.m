@@ -3,9 +3,9 @@ function [me,ma,mi,st,fc,pk ,rmse ,fgfz ,sf ,cf ,If ,Clf ,Kv]=time_feaext(y_in)
 % y_in 输入信号
 % ma,mi,me,Kr,ku,pk
 yg=y_in;
-for i=1:100:900
-    k=1:100:900;
-    j=i:1:i+100;
+for i=1:40:960
+    k=1:40:960;
+    j=i:1:i+40;
     me(i)= mean(yg(j));         %平均值
     ma(i) = max(yg(j));         %最大值
     mi(i)= min(yg(j));          %最小值

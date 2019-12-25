@@ -1,5 +1,5 @@
 %% Compressed Sensing Method for IGBT High-Speed Switching Time On-Line Monitoring
-function sig3=compressed(s,r,K)
+function [sig3,theta,f2fft]=compressed(s,r,K)
 %% 输入输出函数
 % s 原始信号
 % n 噪声
@@ -11,12 +11,17 @@ m = double(int32(r*n));
 %                    构造测量矩阵感知矩阵
 randn('state',3)
 Phi = sqrt(1/m) * randn(m,n);     % 感知矩阵（测量矩阵）   高斯随机矩阵  R＝normrnd(MU,SIGMA,m,n)：sigma 方差
+% Phi=eye(m,n);
+% Phi=rand(m,n)>.5;
 f2 = Phi * f;                 % 通过感知矩阵获得测量值   mx1
-Psi =inv( (fft(eye(n,n))));       % 傅里叶正变换，频域稀疏正交基（稀疏表示矩阵）
+f2fft=fft(f2);
+Psi =inv( fft(eye(n,n)));       % 傅里叶正变换，频域稀疏正交基（稀疏表示矩阵）
 A=Phi*Psi;                         % m*n
 %% 重建信号                  omp 重构
 theta=CS_OMP(f2,A,K);
 sig3=real(ifft(full(theta)));
+%%                          L1范数重构
+
 %% 评价指标    
 % CR=m/n;
 % disp(['压缩率',num2str(CR)]);

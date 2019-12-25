@@ -1,15 +1,15 @@
 %% ◊˜Õº figure1
 x=0:1:499;
 figure
-plot(y,'g','linewidth',1.8)
+plot(yw,'g','linewidth',1.8)
 hold on
-plot(y1,'b','linewidth',0.5)
+plot(yw1,'b','linewidth',0.5)
 hold on
-plot(y2,'m','linewidth',0.5)
-% hold on
-% plot(y3,'r','linewidth',0.5)
-% hold on
-% plot(y4,'k','linewidth',1.5)
+plot(yw2,'m','linewidth',0.5)
+hold on
+plot(yw3,'r','linewidth',0.5)
+hold on
+plot(yw4,'k','linewidth',1.5)
 % axis([0 499 10.456 10.9])
 legend('state 1','state 2','state 3');
 ylabel('Ripple voltage(V)')
@@ -31,18 +31,18 @@ ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
 clc
-t=1:1:9;
+t=1:1:10;
 stairs(t,pcaout,'-g','linewidth',1.8)
 hold on
 stairs(t,pcaout1,'-b','linewidth',0.8)
 hold on
 stairs(t,pcaout2,'-m','linewidth',0.8)
-% hold on
-% stairs(t,pcaout3,'-r','linewidth',0.8)
-% hold on
-% stairs(t,pcaout4,'-k','linewidth',1.5)
+hold on
+stairs(t,pcaout3,'-r','linewidth',0.8)
+hold on
+stairs(t,pcaout4,'-k','linewidth',1.5)
 
-legend('state 1','state 2','state 3');
+legend('state 1','state 2','state 3','state 4','state 5');
 ylabel('Characteristic Value')%Ripple voltage(V)
 xlabel('Time Window')
 set(gca,'FontSize',12);
@@ -84,14 +84,16 @@ ylabel('Amplitude')
 % hold on
 % plot(sft,'r','linewidth',0.5);
 %% œ° Ë∂»K÷µ”Î≈∑ œæ‡¿Î
-K=[2:2:169];
-plot(K,pca,'r','linewidth',1.5);
+% K=[40:2:160];
+stairs(pca,'g','linewidth',1.5);
 hold on
-plot(K,pca1,'b','linewidth',1.5);
-% hold on
-% plot(K,pca2,'k','linewidth',1.5);
-% hold on
-% plot(K,pca3,'g','linewidth',1.5);
+stairs(pca1,'b','linewidth',1.5);
+hold on
+stairs(pca2,'m','linewidth',1.5);
+hold on
+stairs(pca3,'r','linewidth',1.5);
+hold on
+stairs(pca4,'k','linewidth',1.5);
 xlabel('K')
 ylabel('Dist')
 legend('CS-PCA','PCA')
