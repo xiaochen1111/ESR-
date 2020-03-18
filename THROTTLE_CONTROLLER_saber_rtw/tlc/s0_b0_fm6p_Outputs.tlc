@@ -1,0 +1,82 @@
+%implements s0_b0_fm6p_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T *lastU;
+real_T lastTime;
+real_T rtb_error;
+real_T rtb_out;
+%closefile localVarDecl
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* {S!d6}Sum: '<Root>/Sum1' incorporates:
+ *  Inport: '<Root>/angle'
+ *  Inport: '<Root>/input'
+ *  Inport: '<Root>/soll'
+ *  Sum: '<Root>/Sum'
+ */
+rtb_error = THROTTLE_CONTROLLER_U.soll - (THROTTLE_CONTROLLER_U.ist1 - THROTTLE_CONTROLLER_U.offset);
+/* {S!d8}Gain: '<S1>/Derivative Gain' */
+THROTTLE_CONTROLLER_B.DerivativeGain = THROTTLE_CONTROLLER_P.PIDController_D * rtb_error;
+/* {S!d10}Derivative: '<S1>/Ideal Derivative' */
+rtb_out = %<(SLibCG_SE(LibGetT()))>;
+if ((THROTTLE_CONTROLLER_DW.TimeStampA >= rtb_out) && (THROTTLE_CONTROLLER_DW.TimeStampB >= rtb_out)) {
+    rtb_out = 0.0;
+} else {
+    lastTime = THROTTLE_CONTROLLER_DW.TimeStampA;
+    lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeA;
+    if (THROTTLE_CONTROLLER_DW.TimeStampA < THROTTLE_CONTROLLER_DW.TimeStampB) {
+        if (THROTTLE_CONTROLLER_DW.TimeStampB < rtb_out) {
+            lastTime = THROTTLE_CONTROLLER_DW.TimeStampB;
+            lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeB;
+        }
+    } else {
+        if (THROTTLE_CONTROLLER_DW.TimeStampA >= rtb_out) {
+            lastTime = THROTTLE_CONTROLLER_DW.TimeStampB;
+            lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeB;
+        }
+    }
+    rtb_out = (THROTTLE_CONTROLLER_B.DerivativeGain - *lastU) / (rtb_out - lastTime);
+}
+/* {E!d10}End of Derivative: '<S1>/Ideal Derivative' */
+
+/* {S!d12}Gain: '<Root>/Gain' incorporates:
+ *  Gain: '<S1>/Proportional Gain'
+ *  Integrator: '<S1>/Integrator'
+ *  Sum: '<S1>/Sum'
+ */
+rtb_out = ((THROTTLE_CONTROLLER_P.PIDController_P * rtb_error + THROTTLE_CONTROLLER_X.Integrator_CSTATE) + rtb_out) * THROTTLE_CONTROLLER_P.Gain_Gain;
+/* {S!d20}Saturate: '<Root>/Saturation3' */
+if (rtb_out > THROTTLE_CONTROLLER_P.Saturation3_UpperSat) {
+    /* {S!d14}Outport: '<Root>/motor_in' */
+    THROTTLE_CONTROLLER_Y.motor_in = THROTTLE_CONTROLLER_P.Saturation3_UpperSat;
+} else if (rtb_out < THROTTLE_CONTROLLER_P.Saturation3_LowerSat) {
+    /* {S!d16}Outport: '<Root>/motor_in' */
+    THROTTLE_CONTROLLER_Y.motor_in = THROTTLE_CONTROLLER_P.Saturation3_LowerSat;
+} else {
+    /* {S!d18}Outport: '<Root>/motor_in' */
+    THROTTLE_CONTROLLER_Y.motor_in = rtb_out;
+}
+/* {E!d20}End of Saturate: '<Root>/Saturation3' */
+
+/* {S!d22}Gain: '<S1>/Integral Gain' */
+THROTTLE_CONTROLLER_B.IntegralGain = THROTTLE_CONTROLLER_P.PIDController_I * rtb_error;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

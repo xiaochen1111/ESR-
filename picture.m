@@ -30,26 +30,20 @@ legend('original value of capacitor',' reconsitution value of capacitor')
 ylabel('Ripple voltage(V)')
 xlabel('Sample number')
 %% figure3
-clc
-t=1:1:10;
-stairs(t,pcaout,'-g','linewidth',1.8)
-hold on
-stairs(t,pcaout1,'-b','linewidth',0.8)
-hold on
-stairs(t,pcaout2,'-m','linewidth',0.8)
-hold on
-stairs(t,pcaout3,'-r','linewidth',0.8)
-hold on
-stairs(t,pcaout4,'-k','linewidth',1.5)
-
-legend('state 1','state 2','state 3','state 4','state 5');
-ylabel('Characteristic Value')%Ripple voltage(V)
-xlabel('Time Window')
+b =bar(C_buck,'FaceColor','flat');
+b(1).CData = [0.4660 0.6740 0.1880];
+b(2).CData = [0.9290 0.6940 0.1250];
+b(3).CData = [0.6350 0.0780 0.1840];
+grid
+legend('Health','Median aged','Fault');
+ylabel('ESR(Ohm)')%Ripple voltage(V)
+% xlabel('Time Window')
 set(gca,'FontSize',12);
 set(gca,'FontName','Helvetica');%%设置所有字体大小为18号，字体为Helverica
 set(gca,'linewidth',1.5);%%设置图框的线宽
 set(gcf,'position',[0 0 650 450]);%%设置画幅大小为横650*纵450
-% axis([1 10 9.370 9.415])
+set(gca,'xticklabel',{'C_A','C_B','C_C','C_D','C_E','C_F'});
+
 % 
 % x=1:0.01:9.99;
 % yy=pcaout(1)*(x>=1&x<2)+pcaout(2)*(x>=2&x<3)+pcaout(3)*(x>=3&x<4)+pcaout(4)*(x>=4&x<5)+pcaout(5)*(x>=5&x<6)+pcaout(6)*(x>=6&x<7)+pcaout(7)*(x>=7&x<8)+pcaout(8)*(x>=8&x<9)+pcaout(9)*(x>=9&x<10);

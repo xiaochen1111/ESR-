@@ -1,0 +1,38 @@
+%implements s0_b0_fm6p_Update "C"
+
+%function Update(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T *lastU;
+%closefile localVarDecl
+/* {S!d24}Update for Derivative: '<S1>/Ideal Derivative' */
+if (THROTTLE_CONTROLLER_DW.TimeStampA == %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>) {
+    THROTTLE_CONTROLLER_DW.TimeStampA = %<(SLibCG_SE(LibGetT()))>;
+    lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeA;
+} else if (THROTTLE_CONTROLLER_DW.TimeStampB == %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>) {
+    THROTTLE_CONTROLLER_DW.TimeStampB = %<(SLibCG_SE(LibGetT()))>;
+    lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeB;
+} else if (THROTTLE_CONTROLLER_DW.TimeStampA < THROTTLE_CONTROLLER_DW.TimeStampB) {
+    THROTTLE_CONTROLLER_DW.TimeStampA = %<(SLibCG_SE(LibGetT()))>;
+    lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeA;
+} else {
+    THROTTLE_CONTROLLER_DW.TimeStampB = %<(SLibCG_SE(LibGetT()))>;
+    lastU = &THROTTLE_CONTROLLER_DW.LastUAtTimeB;
+}
+*lastU = THROTTLE_CONTROLLER_B.DerivativeGain;
+/* {E!d24}End of Update for Derivative: '<S1>/Ideal Derivative' */
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedUpdateLocalVars", localVarDecl)>
+%endfunction
+%function UpdateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction

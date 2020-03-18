@@ -1,0 +1,23 @@
+%implements s0_b0_fm6p_ModelExternalInputInit "C"
+
+%function ModelExternalInputInit(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+THROTTLE_CONTROLLER_U.soll = 0.0;
+THROTTLE_CONTROLLER_U.offset = 0.0;
+THROTTLE_CONTROLLER_U.ist1 = 0.0;
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelExternalInputInitFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelExternalInputInit(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 5, fcnProtoType)>
+%endfunction

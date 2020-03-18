@@ -156,7 +156,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, -7.0, 1550.0, 838.0]
+      Location		      [1913.0, -7.0, 1934.0, 1054.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -182,10 +182,10 @@ Model {
 	IsTabbed		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1875.0, 756.0]
-	ZoomFactor		[1.4999999999999998]
-	Offset			[995.397923596086, 528.88572147636614]
-	SceneRectInView		[995.397923596086, 528.88572147636614, 1000.0000000000001, 403.20000000000005]
+	Extents			[2355.0, 1026.0]
+	ZoomFactor		[0.59999999999999987]
+	Offset			[-477.80207640391427, 175.81905480970033]
+	SceneRectInView		[-477.80207640391427, 175.81905480970033, 3140.0000000000009, 1368.0000000000005]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -206,7 +206,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB5AP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAARgD///8AAAeAAAADOgAAAAEAAAACAAAAAQAAAAL8AAAAAA=="
+      "QBjAHQAbwByAAAAAAD/////AAAARgD///8AAAlgAAAESAAAAAEAAAACAAAAAQAAAAL8AAAAAA=="
       Array {
 	Type			"Cell"
 	Dimension		0
@@ -226,7 +226,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "29721"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Dec 18 19:18:15 2019"
+  LastModifiedDate	  "Wed Jan 08 23:29:39 2020"
   RTWModifiedTimeStamp	  498577442
   ModelVersionFormat	  "1.%<AutoIncrement:48>"
   SampleTimeColors	  off
@@ -1280,7 +1280,7 @@ Model {
   }
   System {
     Name		    "MMC"
-    Location		    [-7, -7, 1543, 831]
+    Location		    [1913, -7, 3847, 1047]
     Open		    on
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
@@ -1295,7 +1295,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "1287"
     SimulinkSubDomain	    "Simulink"
@@ -1779,19 +1779,19 @@ Model {
       "ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;"
       "0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 "
       "1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChan"
-      "nelNames',{{}},'NumLines',1,'LineNames',{{'V M1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',"
-      "struct('MinYLimReal','-249.9995','MaxYLimReal','249.9995','YLabelReal','','MinYLimMag',' 0.00000','MaxYLimMag','"
-      "249.9995','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickC"
-      "olor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980392"
-      "15686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
-      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Titl"
-      "e','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'S"
-      "howContent',true,'Placement',1),'TimeRangeSamples','0.08','TimeRangeFrames','0.08'),extmgr.Configuration('Tools'"
-      ",'Plot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','ZoomX','PreviousAutoscale','X'),extmgr.Configurat"
-      "ion('Tools','Measurements',true,'Version','2019b','Measurements',struct('signalstats',[],'tcursors',struct('XCoo"
-      "rdinates',[0.1985 0.2185],'YCoordinates',[NaN NaN],'CursorChannels',[1 1],'WaveformCursors',true,'ShowHorizontal"
-      "',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',false,'SettingsPanelOpen',0,'MeasurementsPane"
-      "lOpen',1)))),'Version','2019b','Location',[1921 73.4 3841 1039],'VisibleAtModelOpen','on','OpenAtMdlStart',true)"
+      "nelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',stru"
+      "ct('MinYLimReal','-249.9995','MaxYLimReal','249.9995','YLabelReal','','MinYLimMag',' 0.00000','MaxYLimMag','249."
+      "9995','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor"
+      "',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921568"
+      "6 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921568"
+      "6;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','"
+      "%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowC"
+      "ontent',true,'Placement',1),'TimeRangeSamples','0.08','TimeRangeFrames','0.08'),extmgr.Configuration('Tools','Pl"
+      "ot Navigation',true,'OnceAtStop',false,'PreviousZoomMode','ZoomX','PreviousAutoscale','X'),extmgr.Configuration("
+      "'Tools','Measurements',true,'Version','2019b','Measurements',struct('signalstats',[],'tcursors',struct('XCoordin"
+      "ates',[0.1985 0.2185],'YCoordinates',[NaN NaN],'CursorChannels',[1 1],'WaveformCursors',true,'ShowHorizontal',fa"
+      "lse,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',false,'SettingsPanelOpen',0,'MeasurementsPanelOpe"
+      "n',1)))),'Version','2019b','Location',[1921 73.4 3841 1039],'VisibleAtModelOpen','on','OpenAtMdlStart',true)"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2125,7 +2125,7 @@ Model {
       Position		      [800, 560, 866, 599]
       ZOrder		      -8
       Priority		      "1"
-      LibraryVersion	      "*1.2834"
+      LibraryVersion	      "1.2834"
       FontName		      "Verdana"
       SourceBlock	      "powerlib/powergui"
       SourceType	      "PSB option menu block"
